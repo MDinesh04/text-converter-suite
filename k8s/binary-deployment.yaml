@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: binary-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: binary
+  template:
+    metadata:
+      labels:
+        app: binary
+    spec:
+      containers:
+        - name: binary
+          image: binary-service:latest
+          ports:
+            - containerPort: 5001

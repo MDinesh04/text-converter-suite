@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: morse-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: morse
+  template:
+    metadata:
+      labels:
+        app: morse
+    spec:
+      containers:
+        - name: morse
+          image: morse-service:latest
+          ports:
+            - containerPort: 5002

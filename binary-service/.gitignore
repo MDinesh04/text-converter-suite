@@ -1,0 +1,19 @@
+# Node
+node_modules/
+npm-debug.log
+.env
+
+# Logs
+*.log
+
+# OS/IDE garbage
+.DS_Store
+.vscode/
+.idea/
+
+# Docker garbage
+**/Dockerfile
+**/.dockerignore
+
+# Builds
+frontend/build/
