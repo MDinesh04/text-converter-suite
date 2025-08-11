@@ -19,8 +19,11 @@ function ServiceView() {
 
   const isBinary = type === 'binary';
 
-  const handleConvert = async () => {
-    const url = `http://localhost:${isBinary ? '5001' : '5002'}/convert`;
+  const binaryBase = process.env.REACT_APP_BINARY_API || "http://localhost:5001";
+const morseBase = process.env.REACT_APP_MORSE_API || "http://localhost:5002";
+
+const url = `${isBinary ? binaryBase : morseBase}/convert`;
+
 
     const body = isBinary
       ? reverse ? { binary: input } : { text: input }
